@@ -12,8 +12,10 @@ public class LaunchClient {
         System.out.println("Client is listing on ipAddress : " + serverIpAddress + " and port : " + serverPort);
 
         ServerCommunicationHandler serverCommunicationHandler = new ServerCommunicationHandler(socket);
+        serverCommunicationHandler.writeClientName();
         String msg = "";
         do {
+
             msg = serverCommunicationHandler.writeToServer();
             serverCommunicationHandler.readAndPrintFromServer();
         } while(!msg.equals("bye"));

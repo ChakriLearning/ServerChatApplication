@@ -8,13 +8,14 @@ public class SampleServer {
     public SampleServer(int port) {
         this.port = port;
     }
-    public void startServer() {
+    public ServerSocket startServer() {
         try {
             this.serverSocket = new ServerSocket(port);
             System.out.println("server is running on port :- " + port);
         } catch (IOException ie) {
             ie.printStackTrace();
         }
+        return this.serverSocket;
     }
     public Socket acceptClientConnection() {
         try {

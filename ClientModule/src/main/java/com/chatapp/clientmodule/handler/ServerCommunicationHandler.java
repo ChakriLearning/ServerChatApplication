@@ -15,7 +15,7 @@ public class ServerCommunicationHandler {
             i.printStackTrace();
         }
     }
-    public void writeName() {
+    public void writeClientName() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\nEnter your name : ");
         String clientName = scanner.nextLine();
@@ -40,7 +40,7 @@ public class ServerCommunicationHandler {
     public void readAndPrintFromServer() {
         try {
             String msgFromServer = reader.readLine();
-            System.out.println(msgFromServer);
+            System.out.println("server received : " + msgFromServer);
         } catch (IOException i) {
             i.printStackTrace();
         }
